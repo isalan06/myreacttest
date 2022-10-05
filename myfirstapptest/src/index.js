@@ -1,13 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App, {App2} from './App2';
 import reportWebVitals from './reportWebVitals';
+import Layout from './Layout';
+
+const printMessage=()=>{
+  document.getElementById('show-area').innerHTML="我被按到了";
+}
+
+
+
+var name="舊的名子";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Layout>
+      <App name="我的名子" handleClick={printMessage}> 在 index.js中設定文字 </App>
+      <div id="show-area"></div>
+      <App2 />
+    </Layout>
   </React.StrictMode>
 );
 
